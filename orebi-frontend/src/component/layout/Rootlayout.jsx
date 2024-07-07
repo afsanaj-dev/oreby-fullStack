@@ -1,0 +1,19 @@
+import React from "react";
+import Home from "../../pages/Home";
+import { Outlet } from "react-router-dom";
+import Navbar from "../Navbar";
+import Header from "../Header";
+import Footer from "../Footer";
+
+const Rootlayout = () => {
+  return (
+    <div>
+      <Navbar/>
+      <Header/>
+        <Outlet/>
+      <Footer/>
+    </div>
+  );
+};
+
+export default Rootlayout;
