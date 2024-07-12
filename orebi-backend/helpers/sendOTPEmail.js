@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-async function sendOtpEmail(email){
+async function sendOtpEmail(email,name,randomOtp){
     const transporter = nodemailer.createTransport({
         service:"gmail",
         auth: {
@@ -12,7 +12,7 @@ async function sendOtpEmail(email){
         from: process.env.AUTH_EMAIL, // sender address
         to: email, // list of receivers
         subject: "OTP Code for Email Verification", // Subject line
-        html: "<img alt=orebi src=https://i.ibb.co/Lrmyk1W/Footer-Logo.png><br><br><b style=font-family:Arial,Helvetica,sans-serif;font-size:16px>Your verification code is [code].</b><p style=font-family:Arial,Helvetica,sans-serif;font-size:14px>Enter this code in our [website or app] to activate your [customer portal] account.<p style=font-family:Arial,Helvetica,sans-serif;font-size:14px>We’re glad you’re here!<p style=font-family:Arial,Helvetica,sans-serif;font-size:14px>The [company] team" // html body
+        html: `<img alt=orebi src=https://i.ibb.co/Lrmyk1W/Footer-Logo.png><p style=font-family:Arial,Helvetica,sans-serif;font-size:14px>Hi ${name}</p><b style=font-family:Arial,Helvetica,sans-serif;font-size:14px>Your verification code is ${randomOtp}.</b><p style=font-family:Arial,Helvetica,sans-serif;font-size:14px>Enter this code in our [website or app] to activate your [customer portal] account.<p style=font-family:Arial,Helvetica,sans-serif;font-size:14px>We’re glad you’re here!<p style=font-family:Arial,Helvetica,sans-serif;font-size:14px>The [company] team` // html body
       });
 }
 module.exports = sendOtpEmail;

@@ -27,8 +27,10 @@ const userSchema = new mongoose.Schema(
     },
     emailVarify: {
       type: String,
-      enum: ["member", "merchant", "admin"],
-      default: "member",
+      default: false,
+    },
+   otp: {
+      type: Number,
     },
   },
   // timestamps will count all the time record for user
