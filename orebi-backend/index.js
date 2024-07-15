@@ -2,9 +2,11 @@ const express = require("express");
 const app= express();
 require('dotenv').config();
 const routes= require("./routes");
+var cors = require('cors');
 const dbConfig = require("./config/dbConfig");
 dbConfig();
 
+app.use(cors());
 // http://localhost:3000/api/v1/auth/registration
 app.use(express.json());
 app.use(routes);

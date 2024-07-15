@@ -81,10 +81,7 @@ async function OtpVerifyController(req,res){
     }
   } catch (error) {
     return res.status(404).send({error:error});
-  }
-  
-
-   
+  } 
   res.send("OTP verification")
 }
 

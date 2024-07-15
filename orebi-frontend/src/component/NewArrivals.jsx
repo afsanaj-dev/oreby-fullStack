@@ -19,7 +19,7 @@ const NewArrivals = () => {
         className={`${className} !w-[34px] lg:!w-[50px] !h-[34px] lg:!h-[50px] `}
         style={{
           ...style,
-          display: "block",
+
           background: "#979797",
           width: "50px",
           height: "50px",
@@ -48,7 +48,7 @@ const NewArrivals = () => {
         className={`${className} !w-[34px] lg:!w-[50px] !h-[34px] lg:!h-[50px] `}
         style={{
           ...style,
-          display: "block",
+
           background: "#979797",
           width: "50px",
           height: "50px",
