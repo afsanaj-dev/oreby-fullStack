@@ -32,6 +32,9 @@ const userSchema = new mongoose.Schema(
    otp: {
       type: Number,
     },
+   token: {
+      type: String,
+    },
   },
   // timestamps will count all the time record for user
   {

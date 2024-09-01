@@ -10,6 +10,9 @@ import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import AdminLayout from "./admin/AdminLayout";
 import AdminLogin from "./admin/AdminLogin";
+import AdminDashboard from "./admin/AdminDashboard";
+import ForgetPassword from "./pages/ForgetPassword";
+import ChangePassword from "./pages/ChangePassword";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,9 +20,15 @@ const router = createBrowserRouter(
       <Route path="/" element={<Rootlayout />}>
         <Route index element={<Home />}></Route>
         <Route path="/shop" element={<Shop title="Shop" />}></Route>
+        <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
+        <Route
+          path="/changepassword/:token"
+          element={<ChangePassword />}
+        ></Route>
       </Route>
       <Route path="/admin" element={<AdminLayout />}>
-        <Route index element={<AdminLogin />}/>
+        <Route index element={<AdminDashboard />} />
+        <Route path="login" element={<AdminLogin />} />
       </Route>
     </Route>
   )
